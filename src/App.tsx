@@ -1,5 +1,6 @@
-import React, { FC, memo } from "react";
+import React, { FC, memo, useState } from "react";
 import Main from "./View/Main";
+import "./App.css";
 
 const App: FC = () => {
 	return (
