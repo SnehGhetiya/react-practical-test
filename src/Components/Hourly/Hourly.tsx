@@ -1,36 +1,15 @@
-import { FC, memo, useState, useEffect } from "react";
+import { FC, memo } from "react";
 import "./Hourly.css";
 
-interface ApiData {
+interface HourlyData {
 	hourly: any;
-	weather: any;
 }
 
-const Hourly: FC = () => {
-	const [apiData, setApiData] = useState<ApiData>();
-	const [lat, setLat] = useState(0);
-	const [lon, setLon] = useState(0);
-	const date: Date = new Date();
-	const today = date.toLocaleDateString();
-	const tomorrow: Date = new Date(today);
-	tomorrow.setDate(tomorrow.getDate() + 1);
-	const tomorrowDate = tomorrow.toLocaleDateString();
-	const apiUrl: string = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=daily,minutely,current&appid=628f60b5b499c1b0491f056ab8984168&units=metric`;
+interface Props {
+	hourlyWeather: Array<HourlyData>;
+}
 
-	useEffect(() => {
-		if ("geolocation" in navigator) {
-			navigator.geolocation.getCurrentPosition((position) => {
-				setLat(position.coords.latitude);
-				setLon(position.coords.longitude);
-			});
-			fetch(apiUrl)
-				.then((res) => res.json())
-				.then((data) => {
-					setApiData(data);
-				});
-		}
-	}, [lat, lon, apiUrl]);
-	console.log(apiData);
+const Hourly: FC<Props> = (props) => {
 	return (
 		<div
 			style={{
@@ -76,8 +55,8 @@ const Hourly: FC = () => {
 					height: "240px",
 				}}
 			>
-				{apiData &&
-					apiData.hourly.map((data: any) => {
+				{props.hourlyWeather &&
+					props.hourlyWeather.map((data: any) => {
 						return (
 							<li key={data.dt} style={{ padding: "15px" }}>
 								<span

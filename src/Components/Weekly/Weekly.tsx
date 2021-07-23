@@ -1,33 +1,19 @@
-import React, { memo, FC, useState, useEffect } from "react";
+import React, { memo, FC } from "react";
 
-interface ApiData {
+interface WeeklyData {
 	daily: any;
 }
 
-const Weekly: FC = () => {
-	const [apiData, setApiData] = useState<ApiData>();
-	const [lat, setLat] = useState(0);
-	const [lon, setLon] = useState(0);
-	const apiUrl: string = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current&appid=628f60b5b499c1b0491f056ab8984168&units=metric`;
+interface Props {
+	weeklyWeather: Array<WeeklyData>;
+}
+
+const Weekly: FC<Props> = (props) => {
 	const date: Date = new Date();
 	const today = date.toLocaleDateString();
 	const tomorrow: Date = new Date(today);
 	tomorrow.setDate(tomorrow.getDate() + 1);
 	const tomorrowDate = tomorrow.toLocaleDateString();
-
-	useEffect(() => {
-		if ("geolocation" in navigator) {
-			navigator.geolocation.getCurrentPosition((position) => {
-				setLat(position.coords.latitude);
-				setLon(position.coords.longitude);
-			});
-			fetch(apiUrl)
-				.then((res) => res.json())
-				.then((data) => {
-					setApiData(data);
-				});
-		}
-	}, [lat, lon, apiUrl]);
 
 	return (
 		<div
@@ -69,8 +55,8 @@ const Weekly: FC = () => {
 					whiteSpace: "nowrap",
 				}}
 			>
-				{apiData &&
-					apiData.daily.map((data: any) => {
+				{props.weeklyWeather &&
+					props.weeklyWeather.map((data: any) => {
 						return (
 							<li
 								key={data.dt}
