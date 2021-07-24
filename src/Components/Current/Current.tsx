@@ -14,6 +14,9 @@ interface Props {
 }
 
 const Current: FC<Props> = (props) => {
+
+	const weather = props.currentWeather.weather?.map((data:any) => data.main);
+
 	return (
 		<div className="container">
 			<span
@@ -130,7 +133,7 @@ const Current: FC<Props> = (props) => {
 								textAlign: "center",
 							}}
 						>
-							{props.currentWeather.weather[0].main}
+							{weather}
 						</div>
 					</div>
 				</div>
