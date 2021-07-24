@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import "./City.css";
 
 const City = () => {
@@ -22,4 +22,4 @@ const City = () => {
 	);
 };
 
-export default memo(City);
+export default City;

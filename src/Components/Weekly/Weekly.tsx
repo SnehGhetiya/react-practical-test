@@ -1,4 +1,4 @@
-import React, { memo, FC } from "react";
+import React, { , FC } from "react";
 import "./Weekly.css";
 
 interface WeeklyData {
@@ -164,4 +164,4 @@ const Weekly: FC<Props> = (props) => {
 		</div>
 	);
 };
-export default memo(Weekly);
+export default (Weekly);

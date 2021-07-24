@@ -1,4 +1,4 @@
-import { memo, FC } from "react";
+import {  FC } from "react";
 interface weather {
 	main?: string;
 }
@@ -143,4 +143,4 @@ const Current: FC<Props> = (props) => {
 		</div>
 	);
 };
-export default memo(Current);
+export default (Current);

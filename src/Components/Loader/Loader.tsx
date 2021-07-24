@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC } from "react";
 import "./Loader.css";
 
 const Loader: FC = () => {
@@ -96,4 +96,4 @@ const Loader: FC = () => {
 		</div>
 	);
 };
-export default memo(Loader);
+export default Loader;

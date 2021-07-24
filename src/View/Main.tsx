@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./Main.css";
 import Current from "../Components/Current/Current";
 import Header from "../Components/Header/Header";
@@ -101,4 +101,4 @@ const Main: FC = () => {
 	);
 };
 
-export default memo(Main);
+export default Main;

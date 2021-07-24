@@ -1,7 +1,7 @@
 import React, {
 	Dispatch,
 	FC,
-	memo,
+	,
 	SetStateAction,
 	useEffect,
 	useState,
@@ -186,4 +186,4 @@ const Search: FC<Props> = (props) => {
 		</div>
 	);
 };
-export default memo(Search);
+export default (Search);

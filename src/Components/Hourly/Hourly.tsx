@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { FC } from "react";
 import "./Hourly.css";
 
 interface HourlyData {
@@ -152,4 +152,4 @@ const Hourly: FC<Props> = (props) => {
 		</div>
 	);
 };
-export default memo(Hourly);
+export default Hourly;
