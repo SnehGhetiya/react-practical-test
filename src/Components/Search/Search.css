@@ -1,0 +1,81 @@
+.icon1 {
+	position: absolute;
+	right: 2%;
+}
+.icon2 {
+	position: relative;
+	right: 8%;
+}
+
+.search-down {
+	display: block;
+	top: 25% !important;
+}
+.search-mag {
+	display: block;
+}
+.search-mag:hover {
+	display: block;
+	cursor: pointer;
+}
+
+.show:hover {
+	display: block;
+	cursor: pointer;
+}
+.none {
+	display: none;
+}
+
+/*search-list*/
+
+.input-search {
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+.input-search:focus {
+	box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 4%);
+}
+
+.no-suggestions {
+	color: #999;
+	padding: 0.5rem;
+}
+
+.suggestions {
+	border-top-width: 0;
+	list-style: none;
+	margin-top: 0;
+	max-height: 143px;
+	overflow-y: auto;
+	padding-left: 0;
+	width: 100%;
+	background-color: #fff;
+	border-left: 1px solid rgb(241, 241, 241);
+	border-bottom: 1px solid rgb(241, 241, 241);
+	border-right: 1px solid rgb(241, 241, 241);
+	/* border-top-left-radius: 20px; */
+	border-bottom-left-radius: 20px;
+	/* border-top-right-radius: 20px; */
+	border-bottom-right-radius: 20px;
+	box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 4%);
+}
+
+.suggestions li {
+	padding: 0.5rem;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+	background-color: #999;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+	border-bottom: 1px solid rgb(241, 241, 241);
+}
+.recent:hover {
+	cursor: pointer;
+}

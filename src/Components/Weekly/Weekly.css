@@ -1,0 +1,30 @@
+@media screen and (max-width: 992px) {
+	ul {
+		padding: 55%;
+		width: 100%;
+		overflow: hidden !important;
+		display: flex;
+		flex-direction: row;
+	}
+
+	span {
+		max-width: 130px;
+	}
+
+	p {
+		font-size: 12px;
+		justify-content: center;
+		text-align: center;
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	ul {
+		padding: 27.5%;
+		width: 100%;
+		overflow: hidden !important;
+		display: flex;
+		flex-direction: row;
+	}
+}

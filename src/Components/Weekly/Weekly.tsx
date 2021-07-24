@@ -1,4 +1,5 @@
 import React, { memo, FC } from "react";
+import "./Weekly.css";
 
 interface WeeklyData {
 	daily: any;
@@ -17,6 +18,7 @@ const Weekly: FC<Props> = (props) => {
 
 	return (
 		<div
+			className="daily"
 			style={{
 				paddingLeft: "50px",
 				paddingRight: "50px",
@@ -26,6 +28,7 @@ const Weekly: FC<Props> = (props) => {
 			}}
 		>
 			<span
+				className="block"
 				style={{
 					display: "block",
 					marginLeft: "35px",
