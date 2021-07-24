@@ -1,7 +1,6 @@
 import React, {
 	Dispatch,
 	FC,
-	,
 	SetStateAction,
 	useEffect,
 	useState,
@@ -186,4 +185,4 @@ const Search: FC<Props> = (props) => {
 		</div>
 	);
 };
-export default (Search);
+export default Search;
