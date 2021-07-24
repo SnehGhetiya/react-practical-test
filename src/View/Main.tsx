@@ -15,10 +15,12 @@ interface ApiData {
 	daily: any;
 	hourly: any;
 }
-
+interface weather {
+	main?: string;
+}
 interface CurrentData {
 	coord: any;
-	weather: any;
+	weather: Array<weather>;
 	main: any;
 	dt: any;
 	name: any;
@@ -30,7 +32,7 @@ const Main: FC = () => {
 	const [apiData, setApiData] = useState<ApiData>();
 	const [currentData, setCurrentData] = useState<CurrentData>({
 		coord: "",
-		weather: "",
+		weather: [],
 		main: "",
 		dt: "",
 		name: "",

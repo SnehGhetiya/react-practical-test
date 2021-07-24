@@ -1,8 +1,10 @@
 import { memo, FC } from "react";
-
+interface weather {
+	main?: string;
+}
 interface CurrentData {
 	coord: any;
-	weather: any;
+	weather: Array<weather>;
 	main: any;
 	dt: any;
 	name: any;
@@ -14,8 +16,8 @@ interface Props {
 }
 
 const Current: FC<Props> = (props) => {
-
-	const weather = props.currentWeather.weather?.map((data:any) => data.main);
+	const envir = props.currentWeather?.weather.map(({ main }) => main);
+	console.log(props.currentWeather?.weather.map(({ main }) => main));
 
 	return (
 		<div className="container">
@@ -133,7 +135,7 @@ const Current: FC<Props> = (props) => {
 								textAlign: "center",
 							}}
 						>
-							{weather}
+							{envir[0]}
 						</div>
 					</div>
 				</div>
